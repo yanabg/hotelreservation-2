@@ -23,77 +23,21 @@ document.querySelector('#new-reservation').addEventListener('click', (e) => clea
 function cleanData(e) {
 
     e.preventDefault();
-    changeContent('guest-details-form-content');
+    changeContent('confirm-reservation-content');
 }
-//admin javascript:
-document.querySelector('#guest-details-back-btn').addEventListener('click', (e) => fillRoomForm(e));
+//add verifier javascript:
+document.querySelector('#confirm-back-btn').addEventListener('click', (e) => getBackToPersonalData(e));
 
-function fillRoomForm(e) {
+function getBackToPersonalData(e) {
     e.preventDefault();
-    changeContent('guest-details-form-content');
+    changeContent('confirm-reservation-content');
 }
 
-document.querySelector('#guest-details-next-btn').addEventListener('click', (e) => getPersonalData(e));
 
-function getPersonalData(e) {
+document.querySelector('#confirm-reservation').addEventListener('click', (e) => showThanksPage(e));
+
+function showThanksPage(e) {
     e.preventDefault();
-    const data = e.target.parentElement.parentElement;
-
-    const name = data.querySelector('#name').value;
-    const phone = data.querySelector('#phone-number').value;
-    const email = data.querySelector('#email').value;
-
-    if (name != '' && phone != '' && email != '') {
-        reservation.name = name;
-        reservation.phone = phone;
-        reservation.email = email;
-        console.log(reservation);
-        changeContent('confirm-reservation-content');
-        fillConfirmReservationData(reservation);
-    }
+    changeContent('thank-you-content');
 }
-
-function fillConfirmReservationData(customReservation) {
-    document.querySelector('.confirm-reservation #guest-name').textContent = `Name: ${customReservation.name}`;
-    document.querySelector('.confirm-reservation #guest-phone').textContent = `Phone Number: ${customReservation.phone}`;
-    document.querySelector('.confirm-reservation #guest-email').textContent = `Email: ${customReservation.email}`;
-    document.querySelector('.confirm-reservation #guest-room-type').textContent = `Room Type: ${customReservation.roomType}`;
-    document.querySelector('.confirm-reservation #guest-data-in').textContent = `Date-in: ${customReservation.startDate}`;
-    document.querySelector('.confirm-reservation #guest-data-out').textContent = `Date-out: ${customReservation.endDate}`;
-
-}
-
-
-document.querySelectorAll('.room-type').forEach(room => {
-    room.addEventListener("click", (e) => selectRoomType(e))
-});
-
-function selectRoomType(e) {
-    let myTarget = undefined;
-    e.preventDefault;
-    if (e.target.querySelector('img') != null) {
-        myTarget = e.target;
-    } else {
-        myTarget = e.target.parentElement;
-    }
-    document.querySelectorAll('.room-type').forEach(room =>
-        room.classList.remove('selected-room'));
-    myTarget.classList.add('selected-room');
-
-}
-changeContent('search-form-content');
-document.querySelector('#search-form-button').addEventListener('click', (e) => searchFormData(e));
-//document.querySelector('#search-back-btn').addEventListener('click', (e) => fillSearchForm(e));
-
-function searchFormData(e) {
-    e.preventDefault();
-
-    const roomInfo = e.target.parentElement.parentElement.querySelector('.selected-room h4').textContent;
-    reservation.roomType = roomInfo;
-    console.log(reservation);
-    changeContent('guest-details-form-content');
-
-}
-
-
 
