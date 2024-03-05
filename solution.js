@@ -23,11 +23,12 @@ function cleanData(e) {
     changeContent('search-result-form-content');
 }
 
+//add offerer javascript:
 document.querySelector('#search-back-btn').addEventListener('click', (e) => fillSearchForm(e));
 
 function fillSearchForm(e) {
     e.preventDefault();
-    changeContent('our-offers-form-content');
+    changeContent('search-form-content');
     document.querySelector('#check-in').value = reservation.startDate;
     document.querySelector('#check-out').value = reservation.endDate;
     document.querySelector('#people').value = reservation.guestsCount;
@@ -58,6 +59,6 @@ function findRoom(e) {
     const roomInfo = e.target.parentElement.parentElement.querySelector('.selected-room h4').textContent;
     reservation.roomType = roomInfo;
     console.log(reservation);
-    changeContent('search-result-form-content');
+    changeContent('guest-details-form-content');
 
 }
