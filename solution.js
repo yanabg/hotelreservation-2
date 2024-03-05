@@ -9,7 +9,7 @@ let reservation =
     email: null
 }
 
-
+//questioner java script
 function changeContent(className) {
     document.querySelectorAll('.custom-form').forEach(div => div.classList.add('hidden'));
     if( document.querySelector(`.${className}`) != null){
