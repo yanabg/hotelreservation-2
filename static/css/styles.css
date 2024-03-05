@@ -145,7 +145,7 @@ form h3 {
     text-align: center;
 }
 
-/*dummy change to commit the correct code to github */
+/*questioner styles*/
 label {
     display: block;
     margin-top: 30px;
@@ -153,6 +153,7 @@ label {
     font-weight: 500;
 }
 
+/*questioner styles*/
 input {
     display: block;
     height: 50px;
