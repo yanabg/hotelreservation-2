@@ -18,6 +18,7 @@ function changeContent(className) {
 }
 */
 
+//during merge keep the code below after the code from questioner
 function changeContent(className) {
     // Hide all custom-form elements except the one with className
     document.querySelectorAll('.custom-form').forEach(div => {

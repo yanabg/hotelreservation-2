@@ -235,6 +235,8 @@ button:hover {
 }
 
 /* end of new code*/
+
+/* be vigilant during merge */
 .thank-you {
     display: flex;
     align-items: center;
