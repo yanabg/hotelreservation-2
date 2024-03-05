@@ -19,6 +19,7 @@ function changeContent(className) {
 document.querySelector('#new-reservation').addEventListener('click', (e) => cleanData(e));
 
 function cleanData(e) {
+
     e.preventDefault();
     changeContent('search-result-form-content');
 }
@@ -59,5 +60,6 @@ function findRoom(e) {
     reservation.roomType = roomInfo;
     console.log(reservation);
     changeContent('search-result-form-content');
+
 
 }
