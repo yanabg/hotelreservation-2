@@ -9,6 +9,7 @@ let reservation =
     email: null
 }
 
+//dummy change to commit the correct code to github
 function changeContent(className) {
     document.querySelectorAll('.custom-form').forEach(div => div.classList.add('hidden'));
     if( document.querySelector(`.${className}`) != null){
