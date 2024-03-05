@@ -9,6 +9,7 @@ let reservation =
     email: null
 }
 
+//questioner java script
 function changeContent(className) {
     document.querySelectorAll('.custom-form').forEach(div => div.classList.add('hidden'));
     if( document.querySelector(`.${className}`) != null){
@@ -18,7 +19,9 @@ function changeContent(className) {
 
 document.querySelector('#new-reservation').addEventListener('click', (e) => cleanData(e));
 
+
 function cleanData(e) {
+
     e.preventDefault();
     changeContent('confirm-reservation-content');
 }
@@ -37,3 +40,4 @@ function showThanksPage(e) {
     e.preventDefault();
     changeContent('thank-you-content');
 }
+
