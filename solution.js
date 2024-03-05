@@ -19,5 +19,21 @@ function changeContent(className) {
 document.querySelector('#new-reservation').addEventListener('click', (e) => cleanData(e));
 
 function cleanData(e) {
-    changeContent('search-form-content');
+    e.preventDefault();
+    changeContent('confirm-reservation-content');
+}
+//add verifier javascript:
+document.querySelector('#confirm-back-btn').addEventListener('click', (e) => getBackToPersonalData(e));
+
+function getBackToPersonalData(e) {
+    e.preventDefault();
+    changeContent('confirm-reservation-content');
+}
+
+
+document.querySelector('#confirm-reservation').addEventListener('click', (e) => showThanksPage(e));
+
+function showThanksPage(e) {
+    e.preventDefault();
+    changeContent('thank-you-content');
 }
