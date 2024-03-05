@@ -9,6 +9,7 @@ let reservation =
     email: null
 }
 
+//questioner java script
 function changeContent(className) {
     document.querySelectorAll('.custom-form').forEach(div => div.classList.add('hidden'));
     if( document.querySelector(`.${className}`) != null){
@@ -18,10 +19,17 @@ function changeContent(className) {
 
 document.querySelector('#new-reservation').addEventListener('click', (e) => cleanData(e));
 
+
 function cleanData(e) {
+
+/*function cleanData(e) {
+
+
     e.preventDefault();
     changeContent('search-result-form-content');
 }
+*/
+
 
 //add offerer javascript:
 document.querySelector('#search-back-btn').addEventListener('click', (e) => fillSearchForm(e));
@@ -50,15 +58,21 @@ function selectRoomType(e) {
     document.querySelectorAll('.room-type').forEach(room =>
         room.classList.remove('selected-room'));
     myTarget.classList.add('selected-room');
+
 }
+changeContent('search-form-content');
+document.querySelector('#search-form-button').addEventListener('click', (e) => searchFormData(e));
+//document.querySelector('#search-back-btn').addEventListener('click', (e) => fillSearchForm(e));
 
-document.querySelector('#search-next-btn').addEventListener('click', (e) => findRoom(e));
-
-function findRoom(e) {
+function searchFormData(e) {
     e.preventDefault();
+
     const roomInfo = e.target.parentElement.parentElement.querySelector('.selected-room h4').textContent;
     reservation.roomType = roomInfo;
     console.log(reservation);
     changeContent('guest-details-form-content');
 
 }
+
+
+
