@@ -145,7 +145,8 @@ form h3 {
     text-align: center;
 }
 
-/*questioner styles*/
+
+
 label {
     display: block;
     margin-top: 30px;
@@ -153,7 +154,7 @@ label {
     font-weight: 500;
 }
 
-/*questioner styles*/
+
 input {
     display: block;
     height: 50px;
@@ -230,6 +231,14 @@ button:hover {
 
 .site-content {
     height: 70%;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons button {
+    margin: 20px;
 }
 
 
