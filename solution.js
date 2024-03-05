@@ -18,18 +18,11 @@ function changeContent(className) {
 
 document.querySelector('#new-reservation').addEventListener('click', (e) => cleanData(e));
 
-/* the cleanData function needs to be reworked to prevent default behavior of the anchor element
 function cleanData(e) {
+    e.preventDefault();
     changeContent('guest-details-form-content');
 }
-*/
-// reworked cleanData function:
-function cleanData(e) {
-    e.preventDefault(); // Prevent default behavior of the anchor element
-    changeContent('guest-details-form-content');
-}
-
-//new code from admin/resources:
+//admin javascript:
 document.querySelector('#guest-details-back-btn').addEventListener('click', (e) => fillRoomForm(e));
 
 function fillRoomForm(e) {
@@ -65,4 +58,3 @@ function fillConfirmReservationData(customReservation) {
     document.querySelector('.confirm-reservation #guest-data-in').textContent = `Date-in: ${customReservation.startDate}`;
     document.querySelector('.confirm-reservation #guest-data-out').textContent = `Date-out: ${customReservation.endDate}`;
 }
-
